@@ -1,0 +1,1 @@
+It is a SIMPLE_SNAKE_GAME where you use four arrows of your keyboard to move your snake(O) and fruit is projected with letter (F) it will project your score and also updates the highest score using c++.
