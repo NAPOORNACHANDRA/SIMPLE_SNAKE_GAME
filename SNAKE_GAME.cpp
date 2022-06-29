@@ -12,7 +12,8 @@ bool gameover;
     const int height=25;
      int snake_x ,snake_y;
      int fruit_x, fruit_y;
-     int tailx[100] , taily[100], tail_len, score, highest_score;
+     int tailx[100] , taily[100], 
+     int tail_len, score, highest_score;
      enum direction{Stop=0,Left,Right,Up,Down};
      direction dir;
 
@@ -124,10 +125,13 @@ void Logic()
 {   //storing the positions of tail segments and mving it forward
     int past_x = tailx[0];
     int past_y = taily[0];
-    
     tailx[0] = snake_x;
     taily[0] = snake_y;
     int ppast_x, ppast_y;
+    
+    
+    
+    
     for (int i = 1; i <tail_len; i++)
     {
         ppast_x = tailx[i];
@@ -154,9 +158,7 @@ void Logic()
     default:
         break;
     }
-    //use this for tough level if it touches the wall then the game is over
-    //if (x > width || x < 0 || y > height || y < 0)
-    //  gameOver = true;
+    
     if (snake_x >= width-1) snake_x = 1; else if (snake_x <= 0) snake_x = width - 2;
     if (snake_y >= height-1) snake_y = 1; else if (snake_y <= 0) snake_y = height - 2;
  
@@ -171,6 +173,9 @@ void Logic()
         fruit_y = rand() % height;
         tail_len++;
     }
+    //use this for tough level if it touches the wall then the game is over
+    //if (x > width || x < 0 || y > height || y < 0)
+    //  gameOver = true;
 }
 int main()
 {
